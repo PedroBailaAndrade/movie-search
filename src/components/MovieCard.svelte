@@ -1,10 +1,12 @@
 <script>
 	export let movie;
+	const { imdbID } = movie;
 	import {
 		favouriteMovies,
 		addToFavouriteMovies,
 		removeFromFavouriteMovies
 	} from '../routes/favouritesMovies';
+	import SeeMore from './SeeMore.svelte';
 </script>
 
 <div class="movie-card">
@@ -15,5 +17,5 @@
 		<button on:click={() => addToFavouriteMovies(movie)}>Add to favourites</button>
 	{/if}
 
-	<a href={'movie/' + movie.imdbID}> See More </a>
+	<SeeMore {imdbID} />
 </div>
