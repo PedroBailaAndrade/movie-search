@@ -9,8 +9,6 @@
 	const { movie } = data;
 </script>
 
-<button><a href="/">Home</a></button>
-
 <p>{movie.Title}</p>
 
 {#if $favouriteMovies.some((favouriteMovie) => favouriteMovie.imdbID === movie.imdbID)}
