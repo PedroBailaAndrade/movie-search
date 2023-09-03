@@ -9,7 +9,7 @@ export const load = async ({ params }) => {
 
 	if (response.ok) {
 		return {
-			movieDetails: data
+			movie: data
 		};
 	}
 };
