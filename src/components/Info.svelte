@@ -4,11 +4,6 @@
 
 	export let movie;
 	export let favouriteButton;
-	let genreArray = [];
-
-	// if (movie) {
-	// 	genreArray = movie.Genre.split(', ').slice(0, 2);
-	// }
 </script>
 
 <div class="info-wrapper">
@@ -26,26 +21,20 @@
 			</div>
 		{/if}
 	</div>
-	{#if movie.Genre}
-		<div class="genre-wrapper">
-			{#each genreArray as genre}
-				<p class="genre">{genre}</p>
-			{/each}
-		</div>
-	{/if}
 
-	<SeeMore imdbID={movie.imdbID} />
-
-	{#if favouriteButton}
-		<FavouriteButton {movie} />
-	{/if}
+	<div class="bottom-info-wrapper">
+		<SeeMore imdbID={movie.imdbID} />
+		{#if favouriteButton}
+			<FavouriteButton {movie} />
+		{/if}
+	</div>
 </div>
 
 <style>
 	.info-wrapper {
 		background-color: #a28bfd;
-		padding: 1rem 1rem 1rem 8rem;
-		max-width: 18rem;
+		border-radius: 16px;
+		padding: 4rem 1rem 1rem;
 	}
 
 	.title-wrapper {
@@ -53,7 +42,7 @@
 	}
 
 	.title {
-		font-size: 3rem;
+		font-size: 2rem;
 		margin: 0;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -92,19 +81,9 @@
 		vertical-align: unset;
 	}
 
-	.genre-wrapper {
+	.bottom-info-wrapper {
 		display: flex;
-		gap: 0.5rem;
-		margin-bottom: 1rem;
-	}
-
-	.genre {
-		border: 2px solid #fe6f6f;
-		border-radius: 16px;
-		color: #fe6f6f;
-		font-size: 0.75rem;
-		margin: 0;
-		padding: 0.2rem 0.5rem;
-		width: fit-content;
+		justify-content: space-between;
+		align-items: center;
 	}
 </style>

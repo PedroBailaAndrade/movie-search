@@ -12,3 +12,20 @@
 		{/each}
 	</div>
 {/if}
+
+<style>
+	.favourite-movies {
+		display: flex;
+		gap: 3rem;
+		overflow-x: scroll;
+		padding-top: 7rem;
+		padding-bottom: 3rem;
+
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	.favourite-movies::-webkit-scrollbar {
+		display: none;
+	}
+</style>

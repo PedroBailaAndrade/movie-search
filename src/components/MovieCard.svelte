@@ -13,34 +13,29 @@
 
 <style>
 	.movie-card {
-		display: flex;
+		position: relative;
+		display: grid;
+		grid-template-columns: 1fr;
 	}
 
 	.movie-poster {
 		border-radius: 16px;
-		width: 10rem;
-		z-index: 2;
+		position: relative;
+		z-index: 1000;
 	}
 
 	.movie-card:hover .movie-poster {
-		rotate: -6deg;
-		transform: scale(1.6);
-		transform-origin: bottom right;
+		top: -6rem;
 	}
 
 	.info-wrapper {
-		clip-path: inset(0 100% 0 0);
-		opacity: 0;
-		margin-left: -4rem;
-		width: 0;
-		z-index: 1;
-
-		transition: clip-path 1s, opacity 2s;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		width: 100%;
 	}
 
 	.movie-card:hover .info-wrapper {
-		clip-path: inset(0 0 0 0);
-		opacity: 1;
-		width: 100%;
+		bottom: -2rem;
 	}
 </style>

@@ -41,3 +41,20 @@
 		{/each}
 	</div>
 {/if}
+
+<style>
+	.searched-movies {
+		display: flex;
+		gap: 3rem;
+		overflow-x: scroll;
+		padding-top: 7rem;
+		padding-bottom: 3rem;
+
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	.searched-movies::-webkit-scrollbar {
+		display: none;
+	}
+</style>
