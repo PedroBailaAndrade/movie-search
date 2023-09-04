@@ -3,7 +3,19 @@
 </svelte:head>
 
 <nav>
-	<a href="/">home</a>
+	<div class="logo">
+		<a href="/"><img src="./../../src/images/logo.svg" alt="logo" /></a>
+	</div>
 </nav>
 
 <slot />
+
+<style>
+	nav .logo {
+		margin: 2rem auto 4rem auto;
+		width: fit-content;
+	}
+	.logo img {
+		width: 10rem;
+	}
+</style>
