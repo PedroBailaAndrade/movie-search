@@ -37,7 +37,7 @@
 {#if searchedMovies?.length > 0}
 	<div class="searched-movies">
 		{#each searchedMovies as movie}
-			<MovieCard {movie} />
+			<MovieCard {movie} favouriteButton={false} />
 		{/each}
 	</div>
 {/if}

@@ -1,7 +1,6 @@
 <script>
 	import { favouriteMovies } from '../routes/favouritesMovies';
-	import FavouriteButton from './FavouriteButton.svelte';
-	import SeeMore from './SeeMore.svelte';
+	import MovieCard from './MovieCard.svelte';
 </script>
 
 {#if $favouriteMovies.length > 0}
@@ -9,9 +8,7 @@
 
 	<div class="favourite-movies">
 		{#each $favouriteMovies as favouriteMovie}
-			<p>{favouriteMovie.Title}</p>
-			<FavouriteButton movie={favouriteMovie} />
-			<SeeMore imdbID={favouriteMovie.imdbID} />
+			<MovieCard movie={favouriteMovie} />
 		{/each}
 	</div>
 {/if}
