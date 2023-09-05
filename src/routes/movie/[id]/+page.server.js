@@ -8,8 +8,17 @@ export const load = async ({ params }) => {
 	const data = await response.json();
 
 	if (response.ok) {
+		if (data.Error) {
+			return {
+				error: true
+			};
+		}
 		return {
 			movie: data
+		};
+	} else {
+		return {
+			error: true
 		};
 	}
 };

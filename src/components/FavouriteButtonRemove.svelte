@@ -1,6 +1,7 @@
 <script>
+	import { removeFromFavouriteMovies } from '../lib/favouritesMovies';
+
 	export let movie;
-	import { removeFromFavouriteMovies } from '../routes/favouritesMovies';
 </script>
 
 <button on:click={() => removeFromFavouriteMovies(movie)}>

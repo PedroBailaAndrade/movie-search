@@ -1,6 +1,7 @@
 <script>
 	export let movie;
-	import { favouriteMovies } from '../routes/favouritesMovies';
+
+	import { favouriteMovies } from '../lib/favouritesMovies';
 	import FavouriteButtonAdd from './FavouriteButtonAdd.svelte';
 	import FavouriteButtonRemove from './FavouriteButtonRemove.svelte';
 </script>

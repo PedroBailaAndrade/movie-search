@@ -3,7 +3,7 @@
 </script>
 
 <div class="see-more">
-	<a href={'movie/' + imdbID}> See More </a>
+	<a data-sveltekit-preload-data="tap" href={'movie/' + imdbID}> See More </a>
 </div>
 
 <style>

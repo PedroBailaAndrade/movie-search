@@ -1,95 +1,102 @@
 <script>
+	import { fly } from 'svelte/transition';
 	import FavouriteButton from '../../../components/FavouriteButton.svelte';
 
 	export let data;
-	const { movie } = data;
+	const { movie, error } = data;
 	let genreArray = [];
 	let actorsArray = [];
 	let writersArray = [];
 
-	genreArray = movie.Genre.split(', ');
-	actorsArray = movie.Actors.split(', ');
-	writersArray = movie.Writer.split(', ');
-
-	console.log(movie);
+	genreArray = movie?.Genre.split(', ');
+	actorsArray = movie?.Actors.split(', ');
+	writersArray = movie?.Writer.split(', ');
 </script>
 
-<div class="movie-details-wrapper">
-	<div class="main-info-wrapper">
-		<img class="poster" src={movie.Poster} alt="Movie Poster" />
-		<div class="info">
-			<div class="title-wrapper">
-				<p class="title">{movie.Title}</p>
-				<div class="favourite-button">
-					<FavouriteButton {movie} />
+{#if error}
+	<p>Something went wrong!</p>
+{:else}
+	<div
+		class="movie-details-wrapper"
+		in:fly={{ y: 50, duration: 500, delay: 500 }}
+		out:fly={{ duration: 500 }}
+	>
+		<div class="main-info-wrapper">
+			<img class="poster" src={movie.Poster} alt="Movie Poster" />
+			<div class="info">
+				<div class="title-wrapper">
+					<p class="title">{movie.Title}</p>
+					<div class="favourite-button">
+						<FavouriteButton {movie} />
+					</div>
 				</div>
-			</div>
-			<div class="sub-info-wrapper">
-				<p class="year">{movie.Year}</p>
-				<p class="runtime">{movie.Runtime}</p>
-				{#if movie.imdbRating && movie.imdbRating !== 'N/A'}
-					<div class="rating-wrapper">
-						<p class="rating">{movie.imdbRating}<span>/10</span></p>
+				<div class="sub-info-wrapper">
+					<p class="year">{movie.Year}</p>
+					<p class="runtime">{movie.Runtime}</p>
+					{#if movie.imdbRating && movie.imdbRating !== 'N/A'}
+						<div class="rating-wrapper">
+							<p class="rating">{movie.imdbRating}<span>/10</span></p>
+						</div>
+					{/if}
+				</div>
+				{#if movie.Genre}
+					<div class="genre-wrapper">
+						{#each genreArray as genre}
+							<p class="genre">{genre}</p>
+						{/each}
 					</div>
 				{/if}
+				<p class="plot">{movie.Plot}</p>
 			</div>
-			{#if movie.Genre}
-				<div class="genre-wrapper">
-					{#each genreArray as genre}
-						<p class="genre">{genre}</p>
+		</div>
+
+		{#if movie.Actors}
+			<div class="actor-wrapper">
+				<p class="header">
+					{#if actorsArray.length > 1}
+						Actors:
+					{:else}
+						Actor:
+					{/if}
+				</p>
+				<div class="content">
+					{#each actorsArray as actor}
+						<div class="person-card">
+							<img src="./../src/images/avatar.png" alt="avatar" />
+							<p class="actor">{actor}</p>
+						</div>
 					{/each}
 				</div>
-			{/if}
-			<p class="plot">{movie.Plot}</p>
-		</div>
+			</div>
+		{/if}
+
+		{#if movie.Writer}
+			<div class="writer-wrapper">
+				<p class="header">
+					{#if writersArray.length > 1}
+						Writers:
+					{:else}
+						Writer:
+					{/if}
+				</p>
+				<div class="content">
+					{#each writersArray as writer}
+						<div class="person-card">
+							<img src="./../src/images/avatar.png" alt="avatar" />
+							<p class="writer">{writer}</p>
+						</div>
+					{/each}
+				</div>
+			</div>
+		{/if}
 	</div>
-
-	{#if movie.Actors}
-		<div class="actor-wrapper">
-			<p class="header">
-				{#if actorsArray.length > 1}
-					Actors:
-				{:else}
-					Actor:
-				{/if}
-			</p>
-			<div class="content">
-				{#each actorsArray as actor}
-					<div class="person-card">
-						<img src="./../src/images/avatar.png" alt="avatar" />
-						<p class="actor">{actor}</p>
-					</div>
-				{/each}
-			</div>
-		</div>
-	{/if}
-
-	{#if movie.Writer}
-		<div class="writer-wrapper">
-			<p class="header">
-				{#if writersArray.length > 1}
-					Writers:
-				{:else}
-					Writer:
-				{/if}
-			</p>
-			<div class="content">
-				{#each writersArray as writer}
-					<div class="person-card">
-						<img src="./../src/images/avatar.png" alt="avatar" />
-						<p class="writer">{writer}</p>
-					</div>
-				{/each}
-			</div>
-		</div>
-	{/if}
-</div>
+{/if}
 
 <style>
 	.main-info-wrapper {
-		display: flex;
+		display: grid;
 		gap: 3rem;
-		grid-template-columns: min-content min-content;
+		grid-template-columns: min-content 1fr;
 		grid-template-rows: 1fr;
 		margin-bottom: 3rem;
 	}

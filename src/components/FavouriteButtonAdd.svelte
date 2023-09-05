@@ -1,6 +1,7 @@
 <script>
+	import { addToFavouriteMovies } from '../lib/favouritesMovies';
+
 	export let movie;
-	import { addToFavouriteMovies } from '../routes/favouritesMovies';
 </script>
 
 <button on:click={() => addToFavouriteMovies(movie)}>

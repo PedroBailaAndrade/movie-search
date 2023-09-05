@@ -42,7 +42,7 @@
 	}
 
 	.title {
-		font-size: 2rem;
+		font-size: 1.5rem;
 		margin: 0;
 		overflow: hidden;
 		text-overflow: ellipsis;
