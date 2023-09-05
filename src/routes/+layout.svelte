@@ -1,5 +1,6 @@
 <svelte:head>
 	<title>Movie Search App</title>
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 </svelte:head>
 
 <nav>

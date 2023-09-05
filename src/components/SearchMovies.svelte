@@ -19,7 +19,9 @@
 			return;
 		}
 
-		const response = await fetch(`http://www.omdbapi.com/?apikey=dc3f4ee5&s&s=${searchInputValue}`);
+		const response = await fetch(
+			`https://www.omdbapi.com/?apikey=dc3f4ee5&s&s=${searchInputValue}`
+		);
 
 		const data = await response.json();
 
