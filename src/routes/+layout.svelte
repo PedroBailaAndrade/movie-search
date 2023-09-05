@@ -4,7 +4,7 @@
 
 <nav>
 	<div class="logo">
-		<a href="/"><img src="./../../src/images/logo.svg" alt="logo" /></a>
+		<a href="/"><img src="/logo.svg" alt="logo" /></a>
 	</div>
 </nav>
 

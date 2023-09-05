@@ -62,7 +62,7 @@
 				<div class="content">
 					{#each actorsArray as actor}
 						<div class="person-card">
-							<img src="./../src/images/avatar.png" alt="avatar" />
+							<img src="/avatar.png" alt="avatar" />
 							<p class="actor">{actor}</p>
 						</div>
 					{/each}
@@ -82,7 +82,7 @@
 				<div class="content">
 					{#each writersArray as writer}
 						<div class="person-card">
-							<img src="./../src/images/avatar.png" alt="avatar" />
+							<img src="/avatar.png" alt="avatar" />
 							<p class="writer">{writer}</p>
 						</div>
 					{/each}
