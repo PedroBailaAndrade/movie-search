@@ -1,4 +1,4 @@
-# movie-search
+# Movie search
 
 This is a Svelte project where you can search for movies.<br>
 It uses the OMDB API.
