@@ -32,9 +32,9 @@
 
 <style>
 	.info-wrapper {
-		background-color: #a28bfd;
+		border: 4px solid black;
 		border-radius: 16px;
-		padding: 4rem 1rem 1rem;
+		padding: 4rem 0.5rem 0.5rem;
 	}
 
 	.title-wrapper {

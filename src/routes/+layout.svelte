@@ -12,6 +12,14 @@
 <slot />
 
 <style>
+	:global(body) {
+		font-family: sans-serif;
+		background-color: #e2e2e2;
+	}
+
+	:global(html) {
+		font-size: 100%;
+	}
 	nav .logo {
 		margin: 2rem auto 4rem auto;
 		width: fit-content;

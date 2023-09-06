@@ -24,11 +24,11 @@ export const addToFavouriteMovies = (movieToAdd) => {
 	return;
 };
 
-export function removeFromFavouriteMovies(movieToRemove) {
+export const removeFromFavouriteMovies = (movieToRemove) => {
 	let movies = get(favouriteMovies);
 
 	const newFavouriteMovies = movies.filter((movie) => movie.imdbID !== movieToRemove.imdbID);
 
 	favouriteMovies.set(newFavouriteMovies);
 	return;
-}
+};

@@ -26,14 +26,18 @@
 
 	.movie-poster {
 		aspect-ratio: 1/1.45;
+		border: 4px solid black;
 		border-radius: 16px;
 		object-fit: cover;
 		position: relative;
-		width: 100%;
+		width: calc(100% - 8px);
 		z-index: 1000;
+		top: 0;
+		transition: all 300ms ease;
 	}
 
-	.movie-card:hover .movie-poster {
+	.movie-card:hover .movie-poster,
+	.movie-card:active .movie-poster {
 		top: -6rem;
 	}
 
@@ -42,9 +46,11 @@
 		left: 0;
 		position: absolute;
 		width: 100%;
+		transition: all 300ms ease;
 	}
 
-	.movie-card:hover .info-wrapper {
+	.movie-card:hover .info-wrapper,
+	.movie-card:active .info-wrapper {
 		bottom: -2rem;
 	}
 

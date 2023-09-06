@@ -14,7 +14,7 @@
 </script>
 
 {#if error}
-	<p>Something went wrong!</p>
+	<p class="error-text">Something went wrong!</p>
 {:else}
 	<div
 		class="movie-details-wrapper"
@@ -93,18 +93,11 @@
 {/if}
 
 <style>
-	.main-info-wrapper {
-		display: grid;
-		gap: 3rem;
-		grid-template-columns: min-content 1fr;
-		grid-template-rows: 1fr;
-		margin-bottom: 3rem;
-	}
-
 	.poster {
-		border: 4px solid grey;
+		border: 4px solid black;
 		border-radius: 26px;
-		max-width: 24rem;
+		width: calc(100% - 8px);
+		margin: 0 auto 1rem auto;
 	}
 
 	.title-wrapper {
@@ -114,15 +107,18 @@
 	}
 
 	.title {
-		font-size: 4rem;
+		font-size: 3rem;
 		font-weight: bold;
 		margin: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	.sub-info-wrapper {
 		align-items: center;
 		display: flex;
-		margin-bottom: 8rem;
+		margin-bottom: 4rem;
 	}
 
 	.year,
@@ -166,9 +162,17 @@
 		width: fit-content;
 	}
 
+	.plot {
+		margin-bottom: 4rem;
+	}
+
+	.actor-wrapper {
+		margin-bottom: 3rem;
+	}
+
 	.actor-wrapper .header,
 	.writer-wrapper .header {
-		font-size: 2rem;
+		font-size: 1rem;
 		margin: 0 auto 1rem;
 	}
 
@@ -176,6 +180,15 @@
 	.writer-wrapper .content {
 		display: flex;
 		gap: 2rem;
+		overflow-x: scroll;
+
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	.actor-wrapper .content::-webkit-scrollbar,
+	.writer-wrapper .content::-webkit-scrollbar {
+		display: none;
 	}
 
 	.person-card {
@@ -190,5 +203,31 @@
 
 	.person-card p {
 		white-space: nowrap;
+	}
+
+	.error-text {
+		width: max-content;
+		margin: auto;
+	}
+
+	@media only screen and (min-width: 768px) {
+		.main-info-wrapper {
+			display: grid;
+			gap: 3rem;
+			grid-template-columns: min-content 1fr;
+			grid-template-rows: 1fr;
+			margin-bottom: 3rem;
+			max-width: 100%;
+		}
+
+		.movie-details-wrapper {
+			max-width: 920px;
+			margin: auto;
+		}
+
+		.poster {
+			max-width: 24rem;
+			min-width: 18rem;
+		}
 	}
 </style>

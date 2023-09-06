@@ -33,23 +33,25 @@
 		scrollbar-width: none;
 	}
 
-	.popular-movies::after {
-		content: '';
-		background: rgb(255, 255, 255);
-		background: linear-gradient(
-			90deg,
-			rgba(255, 255, 255, 0) 0%,
-			rgba(255, 255, 255, 0.836594012605042) 75%
-		);
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 9rem;
-		height: 100%;
-		z-index: 1000;
-	}
-
 	.popular-movies::-webkit-scrollbar {
 		display: none;
+	}
+
+	@media only screen and (min-width: 768px) {
+		.popular-movies::after {
+			content: '';
+			background: rgb(226, 226, 226);
+			background: linear-gradient(
+				90deg,
+				rgba(226, 226, 226, 0.0046612394957983305) 0%,
+				rgba(226, 226, 226, 1) 50%
+			);
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 7rem;
+			height: 100%;
+			z-index: 1000;
+		}
 	}
 </style>

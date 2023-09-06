@@ -40,7 +40,12 @@
 <div class="wrapper">
 	<div class="search-movies">
 		<label for="search">Movie Search</label>
-		<input id="search" bind:value={searchInputValue} on:input={handleSearch} />
+		<input
+			id="search"
+			placeholder="Search for movies..."
+			bind:value={searchInputValue}
+			on:input={handleSearch}
+		/>
 	</div>
 
 	{#if searchInputValue}
@@ -54,7 +59,7 @@
 				<MovieCard skeleton={true} />
 				<MovieCard skeleton={true} />
 			{:else if error}
-				<p>Something went wrong!</p>
+				<p>Try something else! Like Spider-Man or Oppenheimer</p>
 			{/if}
 		</div>
 	{/if}
@@ -80,23 +85,41 @@
 		scrollbar-width: none;
 	}
 
-	.searched-movies::after {
-		content: '';
-		background: rgb(255, 255, 255);
-		background: linear-gradient(
-			90deg,
-			rgba(255, 255, 255, 0) 0%,
-			rgba(255, 255, 255, 0.836594012605042) 75%
-		);
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 9rem;
-		height: 100%;
-		z-index: 1000;
+	label {
+		display: none;
+	}
+
+	input {
+		background-color: transparent;
+		border: 3px solid black;
+		border-radius: 16px;
+		font-size: 2rem;
+		padding: 5px;
+	}
+
+	input:focus {
+		outline: none;
 	}
 
 	.searched-movies::-webkit-scrollbar {
 		display: none;
+	}
+
+	@media only screen and (min-width: 768px) {
+		.searched-movies::after {
+			content: '';
+			background: rgb(226, 226, 226);
+			background: linear-gradient(
+				90deg,
+				rgba(226, 226, 226, 0.0046612394957983305) 0%,
+				rgba(226, 226, 226, 1) 50%
+			);
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 7rem;
+			height: 100%;
+			z-index: 1000;
+		}
 	}
 </style>

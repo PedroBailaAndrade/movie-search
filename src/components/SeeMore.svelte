@@ -8,8 +8,8 @@
 
 <style>
 	.see-more a {
-		color: grey;
-		font-size: 2rem;
+		color: black;
+		font-size: 1.5rem;
 		text-decoration: none;
 	}
 </style>
