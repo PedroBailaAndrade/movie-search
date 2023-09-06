@@ -84,6 +84,6 @@
 	.bottom-info-wrapper {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items: end;
 	}
 </style>
