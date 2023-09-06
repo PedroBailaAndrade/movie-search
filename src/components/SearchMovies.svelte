@@ -70,10 +70,6 @@
 		position: relative;
 		min-height: 5rem;
 	}
-
-	.search-movies {
-		position: absolute;
-	}
 	.searched-movies {
 		display: flex;
 		gap: 3rem;
@@ -93,7 +89,7 @@
 		background-color: transparent;
 		border: 3px solid black;
 		border-radius: 16px;
-		font-size: 2rem;
+		font-size: 1.5rem;
 		padding: 5px;
 	}
 
