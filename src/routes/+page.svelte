@@ -15,3 +15,12 @@
 	{/if}
 	<FavouriteMovies />
 </section>
+
+<style>
+	@media only screen and (min-width: 768px) {
+		section {
+			margin: 0 auto;
+			max-width: 1100px;
+		}
+	}
+</style>
