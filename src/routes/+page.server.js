@@ -7,7 +7,13 @@ export const load = async () => {
 		'tt1517268',
 		'tt13603966',
 		'tt10172266',
-		'tt15671028'
+		'tt15671028',
+		'tt0439572',
+		'tt1001520',
+		'tt9224104',
+		'tt4495098',
+		'tt3427252',
+		'tt9362722'
 	];
 
 	const requests = popularMoviesID.map(async (id) => {
