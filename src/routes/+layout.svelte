@@ -25,6 +25,6 @@
 		width: fit-content;
 	}
 	.logo img {
-		width: 10rem;
+		width: 12rem;
 	}
 </style>
