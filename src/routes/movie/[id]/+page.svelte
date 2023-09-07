@@ -103,6 +103,7 @@
 	.title-wrapper {
 		align-items: center;
 		display: flex;
+		gap: 1rem;
 		justify-content: space-between;
 	}
 
@@ -214,7 +215,7 @@
 		.main-info-wrapper {
 			display: grid;
 			gap: 3rem;
-			grid-template-columns: min-content 1fr;
+			grid-template-columns: 1fr 2fr;
 			grid-template-rows: 1fr;
 			margin-bottom: 3rem;
 			max-width: 100%;
@@ -228,6 +229,11 @@
 		.poster {
 			max-width: 24rem;
 			min-width: 18rem;
+		}
+
+		.info {
+			max-width: 48rem;
+			min-width: 36rem;
 		}
 	}
 </style>
